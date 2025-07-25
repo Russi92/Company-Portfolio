@@ -1,10 +1,15 @@
 
 
 import React from 'react'
+import HomeVideo from './HomeVideo';
+import SuperNovaPacks from './SuperNovaPacks';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <HomeVideo />
+      <SuperNovaPacks />
+    </div>
   )
 }
 
