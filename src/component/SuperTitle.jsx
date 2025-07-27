@@ -1,10 +1,102 @@
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+
+// const SuperTitle = () => {
+
+//   const [description, setDescription] = useState('');
+
+//   const [images, setImages] = useState([]);
+
+//   useEffect(() => {
+//     const fetchSuperTitle = async () => {
+//       try {
+//         const res = await axios.get('https://theway4business.27lashabab.com/api/super-title');
+//         const data = res.data;
+
+//         setDescription(data.data.description);
+//         setImages(data.image_urls);
+//       } catch (error) {
+//         console.error("Error fetching Super Title:", error);
+//       }
+//     };
+
+//     fetchSuperTitle();
+//   }, []);
+
+//   return (
+//     <div className="max-w-5xl mx-auto p-4 mt-20">
+
+//         <div className='flex flex-row-reverse'>
+
+//             <div>
+
+//                 <div
+//                 className="shadow-lg relative h-[50px] w-[400px] m-auto"
+//                 style={{
+//                     background: `linear-gradient(
+//                     to right,
+//                     #007171 19%,
+//                     #00B2B1 46%,
+//                     #00CCCB 62%,
+//                     #00B4DF 85%,
+//                     #009FF3 100%
+//                     )`,
+//                 }}
+//                 >
+//                     <div className="text-7xl font-bold absolute inset-0 flex justify-center items-center text-white bottom-20">
+//                         Super Title
+//                     </div>
+                    
+//                     </div>
+
+                
+//                 <p className="text-white mb-6 ms-5">{description}</p>
+
+//                 <div className="text-white mb-6 ms-5 flex items-center justify-between">
+
+//                     <div>
+
+//                     <div className='text-xs ms-2'>STARTING FROM</div>
+//                     <div className='font-bold text-2xl'>2000 AED</div>
+
+//                     </div>
+
+//                     <div className='border-solid border-white border-2 py-2 px-7 rounded-md shadow-lg cursor-pointer'>
+//                         Button
+//                     </div>
+
+//                 </div>
+
+//             </div>
+
+//                 <div className="px-4 sm:px-6 lg:px-8">
+
+//                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//                         {images.map((img, index) => (
+//                         <img
+//                             key={index}
+//                             src={img}
+//                             alt={`super-img-${index}`}
+//                             className="rounded-lg shadow-md object-cover w-96 h-60"
+//                         />
+//                         ))}
+//                     </div>
+
+//                 </div>
+
+//       </div>
+
+//     </div>
+//   );
+// };
+
+// export default SuperTitle;
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const SuperTitle = () => {
-
   const [description, setDescription] = useState('');
-
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -12,7 +104,6 @@ const SuperTitle = () => {
       try {
         const res = await axios.get('https://theway4business.27lashabab.com/api/super-title');
         const data = res.data;
-
         setDescription(data.data.description);
         setImages(data.image_urls);
       } catch (error) {
@@ -24,70 +115,61 @@ const SuperTitle = () => {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto p-4 mt-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
 
-        <div className='flex flex-row-reverse'>
+      <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
 
-            <div>
-
-                <div
-                className="shadow-lg relative h-[50px] w-[400px] m-auto"
-                style={{
-                    background: `linear-gradient(
-                    to right,
-                    #007171 19%,
-                    #00B2B1 46%,
-                    #00CCCB 62%,
-                    #00B4DF 85%,
-                    #009FF3 100%
-                    )`,
-                }}
-                >
-                    <div className="text-7xl font-bold absolute inset-0 flex justify-center items-center text-white bottom-20">
-                        Super Title
-                    </div>
-                    
-                    </div>
-
-                
-                <p className="text-white mb-6 ms-5">{description}</p>
-
-                <div className="text-white mb-6 ms-5 flex items-center justify-between">
-
-                    <div>
-
-                    <div className='text-xs ms-2'>STARTING FROM</div>
-                    <div className='font-bold text-2xl'>2000 AED</div>
-
-                    </div>
-
-                    <div className='border-solid border-white border-2 py-2 px-7 rounded-md shadow-lg cursor-pointer'>
-                        Button
-                    </div>
-
-                </div>
-
+        {/* النص والزرار */}
+        <div className="w-full lg:w-1/2">
+          <div
+            className="shadow-lg relative h-[60px] w-full max-w-md mx-auto mb-6"
+            style={{
+              background: `linear-gradient(
+                to right,
+                #007171 19%,
+                #00B2B1 46%,
+                #00CCCB 62%,
+                #00B4DF 85%,
+                #009FF3 100%
+              )`,
+            }}
+          >
+            <div className="text-4xl md:text-6xl font-bold absolute inset-0 flex justify-center items-center text-white">
+              Super Title
             </div>
+          </div>
 
-                <div className="px-4 sm:px-6 lg:px-8">
+          <p className="text-white text-sm md:text-base mb-6">{description}</p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {images.map((img, index) => (
-                        <img
-                            key={index}
-                            src={img}
-                            alt={`super-img-${index}`}
-                            className="rounded-lg shadow-md object-cover w-96 h-60"
-                        />
-                        ))}
-                    </div>
+          <div className="text-white flex items-center justify-between flex-wrap gap-4">
+            <div>
+              <div className='text-xs'>STARTING FROM</div>
+              <div className='font-bold text-2xl'>2000 AED</div>
+            </div>
+            <div className='border border-white py-2 px-7 rounded-md shadow-lg cursor-pointer'>
+              Button
+            </div>
+          </div>
+        </div>
 
-                </div>
+        {/* الصور */}
+        <div className="w-full lg:w-1/2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`super-img-${index}`}
+                className="rounded-lg shadow-md object-cover w-full h-60"
+              />
+            ))}
+          </div>
+        </div>
 
       </div>
-
     </div>
   );
 };
 
 export default SuperTitle;
+
