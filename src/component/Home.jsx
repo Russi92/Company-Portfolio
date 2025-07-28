@@ -12,6 +12,7 @@ import Followers from './Followers';
 import Faqs from './Faqs';
 import Partners from './Partners';
 
+
 const Home = () => {
   return (
     <div>

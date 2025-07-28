@@ -100,6 +100,7 @@ import DashboardGallery from './dashboard/DashboardGallery';
 import DashboardBlogs from './dashboard/DashboardBlogs';
 import DashboardServices from './dashboard/dashboardServices';
 
+
 function AppContent() {
   const location = useLocation();
   const isDashboardRoute = location.pathname.startsWith('/dashboard');

@@ -19,7 +19,7 @@ const Partners = () => {
 
   return (
     <>
-        <h2 className='text-center text-4xl md:text-5xl font-extrabold text-white-300 drop-shadow-lg mb-6 tracking-wide'>Partners</h2>
+        <h2 className='text-center text-4xl md:text-5xl font-extrabold text-white-300 drop-shadow-lg mb-6 tracking-wide mt-10'>Partners</h2>
         <div className="py-10 px-4" style={{ background: '#003A3A' }}>
 
 
