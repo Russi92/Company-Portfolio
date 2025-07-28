@@ -9,6 +9,8 @@ import SuperNovaImg from './SuperNovaImg';
 import SuperNovaCard from './SuperNovaCard';
 import SuperNovaPeoples from './SuperNovaPeoples';
 import Followers from './Followers';
+import Faqs from './Faqs';
+import Partners from './Partners';
 
 const Home = () => {
   return (
@@ -21,6 +23,8 @@ const Home = () => {
       <SuperNovaCard />
       <SuperNovaPeoples />
       <Followers />
+      <Faqs />
+      <Partners />
     </div>
   )
 }
