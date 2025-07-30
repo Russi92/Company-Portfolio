@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center mt-8 text-sm font-bold text-black">
-        &copy; {new Date().getFullYear()} Made By Mohamed Hassan Web Developer. All rights reserved.
+        &copy; {new Date().getFullYear()} Made By Eng. Mohamed Hassan Web Developer. All rights reserved.
       </div>
     </footer>
   );
