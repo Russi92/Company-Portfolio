@@ -1,50 +1,196 @@
+// import React, { useState } from 'react'
+// import { Link } from 'react-router-dom'
 
+// const Sidebar = ({ handleLogout }) => {
+//   const [openHomeDropdown, setOpenHomeDropdown] = useState(false)
 
-import { Link, useNavigate } from 'react-router-dom'
+//   return (
+//     <div className="w-64 bg-gray-800 min-h-screen text-white p-4 flex flex-col justify-between">
+//       <div>
+//         <h2 className="text-xl font-bold mb-6">Dashboard</h2>
+//         <ul>
+//           {/* Home Dropdown */}
+//           <li className="mb-4">
+//             <button
+//               onClick={() => setOpenHomeDropdown(!openHomeDropdown)}
+//               className="flex items-center justify-between w-full hover:text-gray-300"
+//             >
+//               <span>
+//                 <i className="fa-solid fa-house-chimney me-1"></i>Home
+//               </span>
+//               <span className="text-lg">{openHomeDropdown ? '−' : '+'}</span>
+//             </button>
 
-const Sidebar = () => {
-  const navigate = useNavigate()
+//             {openHomeDropdown && (
+//               <ul className="ml-5 mt-2 text-sm text-gray-300 space-y-2">
+//                 <li>
+//                   <Link to="/dashboard/super-nova-packs" className="hover:text-white block">Super Nova Packs</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/super-title" className="hover:text-white block">Super Title</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/tiktok-reels" className="hover:text-white block">Tiktok Reels</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/Super-Nova-Images" className="hover:text-white block">Super Nova Images</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/Super-Nova-Cards" className="hover:text-white block">Super Nova Cards</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/TestImonials" className="hover:text-white block">TestImonials</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/Subscribe" className="hover:text-white block">Subscribe</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/Faqs" className="hover:text-white block">FAQS</Link>
+//                 </li>
+//                 <li>
+//                   <Link to="/dashboard/Partners" className="hover:text-white block">Partners</Link>
+//                 </li>
+//               </ul>
+//             )}
 
-  const handleLogout = () => {
-    // لو مخزن Token احذفه
-    // localStorage.removeItem('token')
-    
-    // رجّع المستخدم لصفحة الـ Home
-    navigate('/')
-  }
+//           </li>
+
+//           {/* باقي العناصر */}
+//           <li className="mb-4">
+//             <Link to="users" className="hover:text-gray-300"><i className="fa-solid fa-user-tie me-1"></i>Users</Link>
+//           </li>
+//           <li className="mb-4">
+//             <Link to="gallery" className="hover:text-gray-300"><i className="fas fa-images me-1"></i>Gallery</Link>
+//           </li>
+//           <li className="mb-4">
+//             <Link to="blogs" className="hover:text-gray-300"><i className="fa-solid fa-blog me-1"></i>Blogs</Link>
+//           </li>
+//           <li className="mb-4">
+//             <Link to="services" className="hover:text-gray-300"><i className="fa-solid fa-gear me-1"></i>Services</Link>
+//           </li>
+//         </ul>
+//       </div>
+
+//       {/* زر Logout */}
+//       <button
+//         onClick={handleLogout}
+//         className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded mt-4"
+//       >
+//         <i className="fa-solid fa-right-from-bracket fa-rotate-180 me-1"></i>
+//         Logout
+//       </button>
+//     </div>
+//   )
+// }
+
+// export default Sidebar;
+
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+const Sidebar = ({ handleLogout }) => {
+  const [openHomeDropdown, setOpenHomeDropdown] = useState(false);
+  const location = useLocation();
 
   return (
     <div className="w-64 bg-gray-800 min-h-screen text-white p-4 flex flex-col justify-between">
       <div>
         <h2 className="text-xl font-bold mb-6">Dashboard</h2>
         <ul>
+          {/* Home Dropdown */}
           <li className="mb-4">
-            <Link to="/dashboard/home" className="hover:text-gray-300">Home</Link>
+            <button
+              onClick={() => setOpenHomeDropdown(!openHomeDropdown)}
+              className="flex items-center justify-between w-full hover:text-gray-300"
+            >
+              <span>
+                <i className="fa-solid fa-house-chimney me-1"></i>Home
+              </span>
+              <span className="text-lg">{openHomeDropdown ? '−' : '+'}</span>
+            </button>
+            {openHomeDropdown && (
+              <ul className="ml-5 mt-2 text-sm text-gray-300 space-y-2">
+                {[
+                  { path: '/dashboard/super-nova-packs', label: 'Super Nova Packs' },
+                  { path: '/dashboard/super-title', label: 'Super Title' },
+                  { path: '/dashboard/tiktok-reels', label: 'Tiktok Reels' },
+                  { path: '/dashboard/Super-Nova-Images', label: 'Super Nova Images' },
+                  { path: '/dashboard/Super-Nova-Cards', label: 'Super Nova Cards' },
+                  { path: '/dashboard/TestImonials', label: 'TestImonials' },
+                  { path: '/dashboard/Subscribe', label: 'Subscribe' },
+                  { path: '/dashboard/Faqs', label: 'FAQS' },
+                  { path: '/dashboard/Partners', label: 'Partners' },
+                ].map(({ path, label }) => (
+                  <li key={path}>
+                    <Link
+                      to={path}
+                      className={`block ${
+                        location.pathname.startsWith(path) ? 'text-black font-semibold , bg-white w-full p-1 h-7 rounded' : ''
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+
+          {/* باقي العناصر */}
+          <li className="mb-4">
+            <Link
+              to="users"
+              className={`hover:text-gray-300 ${
+                location.pathname === '/dashboard/users' ? 'text-white font-semibold' : ''
+              }`}
+            >
+              <i className="fa-solid fa-user-tie me-1"></i>Users
+            </Link>
           </li>
           <li className="mb-4">
-            <Link to="/dashboard/users" className="hover:text-gray-300">Users</Link>
+            <Link
+              to="gallery"
+              className={`hover:text-gray-300 ${
+                location.pathname === '/dashboard/gallery' ? 'text-white font-semibold' : ''
+              }`}
+            >
+              <i className="fas fa-images me-1"></i>Gallery
+            </Link>
           </li>
           <li className="mb-4">
-            <Link to="/dashboard/gallery" className="hover:text-gray-300">Gallery</Link>
+            <Link
+              to="blogs"
+              className={`hover:text-gray-300 ${
+                location.pathname === '/dashboard/blogs' ? 'text-white font-semibold' : ''
+              }`}
+            >
+              <i className="fa-solid fa-blog me-1"></i>Blogs
+            </Link>
           </li>
           <li className="mb-4">
-            <Link to="/dashboard/blogs" className="hover:text-gray-300">Blogs</Link>
-          </li>
-          <li className="mb-4">
-            <Link to="/dashboard/services" className="hover:text-gray-300">Services</Link>
+            <Link
+              to="services"
+              className={`hover:text-gray-300 ${
+                location.pathname === '/dashboard/services' ? 'text-white font-semibold' : ''
+              }`}
+            >
+              <i className="fa-solid fa-gear me-1"></i>Services
+            </Link>
           </li>
         </ul>
       </div>
 
-      {/* زر الـ Logout */}
+      {/* زر Logout */}
       <button
         onClick={handleLogout}
-        className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded mt-4">
+        className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded mt-4"
+      >
+        <i className="fa-solid fa-right-from-bracket fa-rotate-180 me-1"></i>
         Logout
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar;
 

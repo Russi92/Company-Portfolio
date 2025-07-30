@@ -19,7 +19,7 @@ const VideoTiktok = () => {
     const fetchVideos = async () => {
       try {
         const res = await axios.get('https://theway4business.27lashabab.com/api/tiktok-videos');
-        setVideos(res.data);
+        setVideos([...res.data].reverse());
       } catch (error) {
         console.error('Error fetching videos:', error);
       }

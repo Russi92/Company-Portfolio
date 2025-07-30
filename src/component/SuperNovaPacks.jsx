@@ -61,7 +61,6 @@ const SuperNovaPacks = () => {
 
     fetchPackages();
   }, []);
-  
 
   return (
     <>
@@ -108,6 +107,7 @@ const SuperNovaPacks = () => {
 
             <h2 className="text-xl font-bold mt-4 mb-2 text-white text-center">{item.title}</h2>
             <p className="text-sm text-white mb-2 text-center">{item.short_description}</p>
+            <p className="text-sm text-white mb-2 text-center"> {item.full_description}</p>
             <div className='flex items-center justify-between'>
             <button className='border-solid border-2 px-7 py-2 rounded-md'>Button</button>
             <p className="text-lg font-semibold text-white ">Price: {item.price} AED</p>

@@ -1,10 +1,13 @@
 
 
+
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const SuperTitle = () => {
   const [description, setDescription] = useState('');
+  const [mainImage, setMainImage] = useState('');
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -13,7 +16,8 @@ const SuperTitle = () => {
         const res = await axios.get('https://theway4business.27lashabab.com/api/super-title');
         const data = res.data;
         setDescription(data.data.description);
-        setImages(data.image_urls);
+        setMainImage(data.main_image_url);     // ✅ حفظ صورة الـ Main
+        setImages(data.image_urls);            // ✅ صور الجاليري
       } catch (error) {
         console.error("Error fetching Super Title:", error);
       }
@@ -63,6 +67,16 @@ const SuperTitle = () => {
         {/* الصور */}
         <div className="w-full lg:w-1/2">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* ✅ عرض Main Image أولاً */}
+            {mainImage && (
+              <img
+                src={mainImage}
+                alt="main-super-title"
+                className="rounded-lg shadow-md object-cover w-full h-60"
+              />
+            )}
+
+            {/* ✅ عرض صور الجاليري بعدها */}
             {images.map((img, index) => (
               <img
                 key={index}
@@ -80,4 +94,5 @@ const SuperTitle = () => {
 };
 
 export default SuperTitle;
+
 
