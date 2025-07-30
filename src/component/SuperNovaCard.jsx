@@ -151,7 +151,11 @@ const SuperNovaCard = () => {
                   <div className="p-4 space-y-2">
                     <h3 className="text-lg font-bold text-white text-center">{service.title}</h3>
                     <p className="text-sm text-white text-center">{service.short_description}</p>
-                    <div className="text-sm text-white text-center">{service.full_description}</div>
+                    {/* <div
+                        className="text-sm text-white text-center"
+                        dangerouslySetInnerHTML={{ __html: service.full_description }}
+                  ></div> */}
+
                   </div>
                 </div>
               </SwiperSlide>
