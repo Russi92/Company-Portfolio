@@ -1,14 +1,5 @@
 
 
-// import React from 'react'
-
-// const SuperNovaPacks = () => {
-//   return (
-//     <div className="text-black p-4">SuperNovaPacks</div>
-//   )
-// }
-
-// export default SuperNovaPacks;
 
 import React, { useState } from 'react';
 

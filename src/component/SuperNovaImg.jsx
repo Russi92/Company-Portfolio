@@ -1,37 +1,5 @@
 
 
-// import axios from 'axios'
-// import React, { useEffect, useState } from 'react'
-
-// const SuperNovaImg = () => {
-
-//   const [images , setImages] = useState([])
-
-//   useEffect (() => {
-//     const fetchSuperNovaImg = async () => {
-//       try{
-//         const res = await axios.get('https://theway4business.27lashabab.com/api/services');
-//         setImages(res.data.image_urls)
-//       } catch (error){
-//         console.log('Error fetching images:' , error)
-//       }
-//     } 
-//     fetchSuperNovaImg();
-//   }, [])
-
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
-
-// export default SuperNovaImg;
-
-
-
-
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -50,7 +18,7 @@ const SuperNovaImg = () => {
         // تجميع كل الصور من جميع العناصر
         const allImages = res.data.flatMap(item => item.image_urls || []);
         
-        setImages(allImages);
+        setImages(allImages.reverse());
       } catch (error) {
         console.log('Error fetching images:', error);
       }
