@@ -319,7 +319,7 @@ const CreatePackageForm = () => {
             <h3 className="text-lg font-semibold text-black">{pkg.title}</h3>
             <p className="text-gray-700 text-sm">{pkg.short_description}</p>
             <p className="text-gray-600 text-xs">{pkg.full_description}</p>
-            <p className="text-green-600 font-bold text-sm">{pkg.price} EGP</p>
+            <p className="text-green-600 font-bold text-sm">{pkg.price} AED</p>
             <div className="flex gap-1 mt-2 overflow-auto">
               {pkg.image_urls.map((url, i) => (
                 <img
