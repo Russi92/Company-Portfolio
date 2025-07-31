@@ -1,6 +1,6 @@
 
 
-// SuperNovaPeoples.jsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,7 +16,7 @@ const SuperNovaPeoples = () => {
     axios
       .get('https://theway4business.27lashabab.com/api/testimonials')
       .then(res => {
-        setTestimonials(res.data.data);
+        setTestimonials(res.data.data.reverse());
       })
       .catch(err => {
         console.error('Error fetching testimonials:', err);
@@ -65,7 +65,7 @@ const SuperNovaPeoples = () => {
 
 
               <h3 className="text-xl font-semibold mb-2">{person.name}</h3>
-              <p className="text-white text-sm">{person.description}</p>
+              <p className="text-white text-sm break-words whitespace-pre-line">{person.description}</p>
             </div>
           </SwiperSlide>
         ))}

@@ -14,32 +14,35 @@ const Login = () => {
 
   const navigate = useNavigate()
 
+
   // const handleLogin = async (e) => {
   //   e.preventDefault()
   //   setMessage('')
   //   setError('')
-
+  
   //   try {
-  //     const res = await axios.post('https://theway4business.27lashabab.com/api/login', {
+  //     const res = await axios.post('/login', {
   //       email,
   //       password
   //     })
-
+  
   //     setMessage('Login successful!')
   //     console.log('Response:', res.data)
-
-  //     // لو فيه توكن خزينه
-  //     if (res.data.access_token) {
-  //       localStorage.setItem('token', res.data.access_token)
+  
+  //     if (access_token) {
+  //       localStorage.setItem('token', access_token)
   //     }
-
-  //     // حوّل بعد ثانية إلى لوحة التحكم
+  
   //     setTimeout(() => {
   //       navigate('/dashboard')
   //     }, 1000)
-      
+  
   //   } catch (err) {
-  //     setError('Login failed. Please check your credentials.')
+  //     if (err.response && err.response.data && err.response.data.message) {
+  //       setError(`Login failed: ${err.response.data.message}`)
+  //     } else {
+  //       setError('Login failed. Please check your credentials.')
+  //     }
   //     console.error('Login error:', err)
   //   }
   // }
@@ -75,6 +78,7 @@ const Login = () => {
       console.error('Login error:', err)
     }
   }
+  
   
 
   return (

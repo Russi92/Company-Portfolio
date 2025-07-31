@@ -11,7 +11,7 @@ const Faqs = () => {
     const fetchFaqs = async () => {
       try {
         const res = await axios.get('https://theway4business.27lashabab.com/api/faqs');
-        setFaqs(res.data.data);
+        setFaqs(res.data.data.reverse());
       } catch (error) {
         console.error("Error fetching FAQs:", error);
       }
