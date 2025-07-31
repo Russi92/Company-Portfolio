@@ -204,8 +204,8 @@ const Partners = () => {
   };
 
   const handleUpdate = async () => {
-    const token = localStorage.getItem("access_token");
-    console.log("access_token", token);
+    const token = localStorage.getItem("token");
+    console.log("token", token);
 
   
     if (!newImage || !editingPartner) {
