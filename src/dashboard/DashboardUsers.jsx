@@ -370,9 +370,9 @@ const Users = () => {
   };
 
   return (
-    <div className="p-6 text-black">
+    <div className="p-6 text-black bg-gray-700 rounded">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Users</h2>
+        <h2 className="text-2xl font-bold text-white">Users</h2>
         <button
           onClick={() => setShowForm(!showForm)}
           className="bg-blue-600 text-white px-4 py-2 rounded"

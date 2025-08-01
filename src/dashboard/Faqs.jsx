@@ -116,8 +116,8 @@ const Faqs = () => {
   };
 
   return (
-    <div className="text-black p-6">
-      <h2 className="text-2xl font-bold mb-4 text-center">FAQS</h2>
+    <div className="text-black p-6 bg-gray-700">
+      <h2 className="text-2xl font-bold mb-4 text-center text-white">FAQS</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto mb-8">
         <input
@@ -152,9 +152,9 @@ const Faqs = () => {
             <div className="absolute top-2 right-2 flex gap-2">
               <button
                 onClick={() => handleEdit(faq)}
-                className="text-green-600 hover:underline"
+                className="text-blue-600 hover:underline"
               >
-                <i className="fas fa-edit"></i>
+                <i className="fas fa-pen"></i>
               </button>
               <button
                 onClick={() => handleDelete(faq.id)}

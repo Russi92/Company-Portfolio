@@ -30,8 +30,8 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="p-6 text-black">
-      <h2 className="text-2xl font-bold text-center mb-4">Followers</h2>
+    <div className="p-6 text-black bg-gray-700">
+      <h2 className="text-2xl font-bold text-center mb-4 text-white">Followers</h2>
 
       {loading ? (
         <p className="text-center">Loading ...</p>

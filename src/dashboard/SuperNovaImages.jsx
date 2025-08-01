@@ -124,7 +124,7 @@ const SuperNovaImages = () => {
   };
 
   return (
-    <div className="p-6 text-black">
+    <div className="p-6 text-white bg-gray-700">
       <h2 className="text-2xl font-bold mb-4">Super Nova Images</h2>
 
       <form onSubmit={handleUpload} className="mb-6">
@@ -169,7 +169,7 @@ const SuperNovaImages = () => {
       </form>
 
       <table className="w-full border border-gray-300">
-        <thead className="bg-gray-200">
+        <thead className="bg-gray-200 text-black">
           <tr>
             <th className="border p-2">#</th>
             <th className="border p-2">Image</th>
