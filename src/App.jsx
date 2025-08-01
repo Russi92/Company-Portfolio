@@ -99,7 +99,7 @@ import DashboardHome from './dashboard/DashboardHome';
 import DashboardUsers from './dashboard/DashboardUsers';
 import DashboardGallery from './dashboard/DashboardGallery';
 import DashboardBlogs from './dashboard/DashboardBlogs';
-import DashboardServices from './dashboard/dashboardServices';
+// import DashboardServices from './dashboard/dashboardServices';
 import SuperNovaPacks from './dashboard/SuperNovaPacks';
 import SuperTitle from './dashboard/SuperTitle';
 import TikTokReels from './dashboard/TikTokReels';
@@ -134,7 +134,7 @@ function AppContent() {
           <Route path="users" element={<DashboardUsers />} />
           <Route path='gallery' element={<DashboardGallery />}/>
           <Route path='blogs' element={<DashboardBlogs />}/>
-          <Route path='services' element={<DashboardServices />}/>
+          {/* <Route path='services' element={<DashboardServices />}/> */}
           <Route path='Super-Nova-Packs' element={<SuperNovaPacks />}/>
           <Route path='Super-Title' element={<SuperTitle />}/>
           <Route path='TikTok-Reels' element={<TikTokReels />}/>
