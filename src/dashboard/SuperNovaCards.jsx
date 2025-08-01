@@ -292,7 +292,7 @@ const CreateSuperNovaCard = ({ onPostCreated }) => {
         }
       );
 
-      setSuccessMsg('تم إنشاء الكارت بنجاح!');
+      setSuccessMsg('Card created successfully !');
       setTitle('');
       setShortDesc('');
       setFullDesc('');
