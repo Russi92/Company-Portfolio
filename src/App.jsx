@@ -109,6 +109,9 @@ import TestImonials from './dashboard/TestImonials';
 import Subscribe from './dashboard/Subscribe';
 import Faqs from './dashboard/Faqs';
 import Partners from './dashboard/Partners';
+import Gallery from './component/Gallery/Gallery';
+import Blogs from './component/Blogs/Blogs'
+
 
 
 function AppContent() {
@@ -121,6 +124,9 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path='/gallery' element={<Gallery />}/>
+        <Route path='/blogs' element={<Blogs />}/>
+     
 
         {/* Dashboard Layout */}
         <Route path="/dashboard" element={<DashboardLayout />}>
