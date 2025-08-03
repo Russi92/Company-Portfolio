@@ -69,7 +69,7 @@ const Sidebar = ({ handleLogout }) => {
                 location.pathname === '/dashboard/gallery' ? 'text-white font-semibold' : ''
               }`}
             >
-              <i className="fas fa-images me-1"></i>Gallery
+              <i className="fas fa-images me-1"></i>Galleries
             </Link>
           </li>
           <li className="mb-4">
