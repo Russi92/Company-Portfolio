@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = ({ handleLogout }) => {
   const [openHomeDropdown, setOpenHomeDropdown] = useState(false);
-  const location = useLocation();
+  const location = useLocation('');
 
   return (
     <div className="w-64 bg-gray-800 min-h-screen text-white p-4 flex flex-col justify-between">
@@ -95,10 +95,7 @@ const Sidebar = ({ handleLogout }) => {
         </ul>
       </div>
 
-      {/* زر Logout */}
-      <button
-        onClick={handleLogout}
-        className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded mt-4"
+      <button onClick={handleLogout} className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded mt-4"
       >
         <i className="fa-solid fa-right-from-bracket fa-rotate-180 me-1"></i>
         Logout

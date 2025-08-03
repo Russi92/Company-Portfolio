@@ -42,7 +42,7 @@ function AppContent() {
 
         {/* Dashboard Layout */}
         <Route path="/dashboard" element={<DashboardLayout />}>
-          {/* <Route path="home" element={<DashboardHome />} /> */}
+          <Route path="home" element={<DashboardHome />} />
           <Route path="users" element={<DashboardUsers />} />
           <Route path='gallery' element={<DashboardGallery />}/>
           <Route path='blogs' element={<DashboardBlogs />}/>

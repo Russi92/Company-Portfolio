@@ -27,27 +27,21 @@ const SuperTitle = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-36 mb-10">
 
-      <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-center sm:justify-between">
 
         {/* النص والزرار */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 ">
           <div
-            className="shadow-lg relative h-[40px] max-w-md mx-auto mb-6"
-            style={{
-              background: `linear-gradient(
-                to right,
-                #007171 19%,
-                #00B2B1 46%,
-                #00CCCB 62%,
-                #00B4DF 85%,
-                #009FF3 100%
-              )`,
-            }}
+            className="relative h-[40px] max-w-md mx-auto mb-6"
+     
           >
-            <div className="text-4xl md:text-6xl font-bold absolute inset-0 bottom-16 flex justify-center items-center text-white m-auto">
-              Super Title
+            {/* <div className="md:text-6xl font-bold absolute inset-0 bottom-16 flex justify-center items-center text-white m-auto w-fit">
+              SUPER NOVA PACKS
+            </div> */}
+            <div className="text-lg sm:text-4xl md:text-4xl lg:text-4xl font-bold absolute inset-0 bottom-16 flex justify-center items-center text-white m-auto w-fit">
+               SUPER NOVA PACKS
             </div>
           </div>
 

@@ -4,12 +4,13 @@ import Sidebar from './DashboardSidebar';
 import DashboardNavbar from './DashboardNavbar';
 import { Outlet, useNavigate } from 'react-router-dom';
 
+
 const DashboardLayout = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/');
+    navigate('/login');
   };
 
   return (

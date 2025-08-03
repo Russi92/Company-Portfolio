@@ -14,39 +14,6 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-
-  // const handleLogin = async (e) => {
-  //   e.preventDefault()
-  //   setMessage('')
-  //   setError('')
-  
-  //   try {
-  //     const res = await axios.post('/login', {
-  //       email,
-  //       password
-  //     })
-  
-  //     setMessage('Login successful!')
-  //     console.log('Response:', res.data)
-  
-  //     if (access_token) {
-  //       localStorage.setItem('token', access_token)
-  //     }
-  
-  //     setTimeout(() => {
-  //       navigate('/dashboard')
-  //     }, 1000)
-  
-  //   } catch (err) {
-  //     if (err.response && err.response.data && err.response.data.message) {
-  //       setError(`Login failed: ${err.response.data.message}`)
-  //     } else {
-  //       setError('Login failed. Please check your credentials.')
-  //     }
-  //     console.error('Login error:', err)
-  //   }
-  // }
-
   const handleLogin = async (e) => {
     e.preventDefault()
     setMessage('')
@@ -66,7 +33,7 @@ const Login = () => {
       }
   
       setTimeout(() => {
-        navigate('/dashboard')
+        navigate('/dashboard/users')
       }, 1000)
   
     } catch (err) {
