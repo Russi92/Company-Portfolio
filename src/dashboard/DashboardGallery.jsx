@@ -286,9 +286,9 @@ const DashboardGallery = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6 text-black">معرض الصور</h2>
+      <h2 className="text-2xl font-bold mb-6 text-black">Galleries</h2>
 
-      {status && <p className="mb-4 text-gray-700">{status}</p>}
+      {status && <p className="mb-4 text-gray-700"></p>}
 
       {services.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -333,10 +333,10 @@ const DashboardGallery = () => {
                   <>
                     <button
                       onClick={() => startEditing(service.id)}
-                      className="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm hover:bg-yellow-700 transition duration-200"
+                      className="text-blue-600 hover:underline bg-blue-600 text-white px-3 py-1 rounded-full text-sm  transition duration-200"
                       title="تعديل الصورة"
                     >
-                      <i className="fas fa-edit"></i>
+                      <i className="fas fa-pen"></i>
                     </button>
                     <button
                       onClick={() => handleDelete(service.id)}
