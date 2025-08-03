@@ -199,7 +199,7 @@ const Navbar = () => {
                 : "hover:underline"
             }
           >
-            Gallery
+            Galleries
           </NavLink>
           <NavLink
             to="/blogs"
@@ -284,7 +284,7 @@ const Navbar = () => {
                 : "hover:underline"
             }
           >
-            Gallery
+            Galleries
           </NavLink>
           <NavLink
             to="/blogs"
