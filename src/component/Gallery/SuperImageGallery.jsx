@@ -1,79 +1,53 @@
-// import axios from 'axios';
-// import React, { useEffect, useState } from 'react';
 
-// const SuperNovaImg = () => {
-//   const [images, setImages] = useState([]);
 
-//   useEffect(() => {
-//     const fetchSuperNovaImg = async () => {
-//       try {
-//         const res = await axios.get('https://theway4business.27lashabab.com/api/services');
-        
-//         // تجميع كل الصور من جميع العناصر
-//         const allImages = res.data.flatMap(item => item.image_urls || []);
-        
-//         setImages(allImages.reverse());
-//       } catch (error) {
-//         console.log('Error fetching images:', error);
-//       }
-//     };
-
-//     fetchSuperNovaImg();
-//   }, []);
-
-//   return (
-//     <div className="container mx-auto my-10">
-//       {images.length > 0 ? (
-//         <div className="flex flex-wrap justify-center gap-4">
-//           {images.map((url, index) => (
-//             <div key={index} className="w-full sm:w-1/2 md:w-1/3">
-//               <img
-//                 src={url}
-//                 alt={`SuperNova ${index}`}
-//                 className="w-full h-64 object-cover rounded-xl shadow-md"
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       ) : (
-//         <p className="text-center text-white">Loading ...</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default SuperNovaImg;
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const SuperNovaImg = () => {
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const fetchSuperNovaImg = async () => {
+    setIsLoading(true);
+    setError(null);
+
     try {
-      const res = await axios.get('https://theway4business.27lashabab.com/api/services');
-      // تجميع كل الصور من جميع العناصر
-      const allImages = res.data.flatMap(item => item.image_urls || []);
-      setImages(allImages.reverse());
-    } catch (error) {
-      console.log('Error fetching images:', error);
+      // إضافة معامل فريد (Timestamp) لمنع المتصفح من استخدام النسخة المخزنة مؤقتًا (Caching)
+      const timestamp = new Date().getTime();
+      const res = await axios.get(`https://theway4business.27lashabab.com/api/services?_t=${timestamp}`);
+
+      // تجميع الصور الرئيسية فقط من جميع العناصر
+      const mainImages = res.data.map(item => item.main_image_url).filter(Boolean);
+      
+      // عكس ترتيب الصور بحيث تظهر الأحدث أولاً
+      setImages(mainImages.reverse());
+      
+      setIsLoading(false);
+    } catch (err) {
+      console.error('Error fetching images:', err);
+      setError('حدث خطأ أثناء جلب الصور.');
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
+    // جلب الصور مرة واحدة فقط عند تحميل المكون
     fetchSuperNovaImg();
-    // Polling every 30 seconds to check for new or updated images
-    const interval = setInterval(fetchSuperNovaImg, 100);
-    return () => clearInterval(interval); // تنظيف الـ interval لما الكومبوننت يتفكك
   }, []);
 
   return (
-    <div className="container mx-auto my-10">
-      {images.length > 0 ? (
-        <div className="flex flex-wrap justify-center gap-4">
+    <div className="container mx-auto my-10 px-4">
+    
+      {isLoading ? (
+        <p className="text-center text-white text-lg">Loading...</p>
+      ) : error ? (
+        <p className="text-center text-red-500 text-lg">{error}</p>
+      ) : images.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {images.map((url, index) => (
-            <div key={index} className="w-full sm:w-1/2 md:w-1/3">
+            <div key={index} className="w-full">
               <img
                 src={url}
                 alt={`SuperNova ${index}`}
@@ -83,7 +57,7 @@ const SuperNovaImg = () => {
           ))}
         </div>
       ) : (
-        <p className="text-center text-white">Loading ...</p>
+        <p className="text-center text-white text-lg">لا توجد صور للعرض حالياً.</p>
       )}
     </div>
   );

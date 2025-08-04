@@ -223,8 +223,7 @@ const Users = () => {
                   <td className="py-2 px-4 border-b text-center space-x-2">
                     <button
                       onClick={() => handleEditUser(user)}
-                      className="text-blue-600 hover:underline"
-                    >
+                      className="text-blue-600 hover:underline">
                       <i className="fas fa-pen"></i>
                     </button>
                     <button

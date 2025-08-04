@@ -23,7 +23,8 @@ import Faqs from './dashboard/Faqs';
 import Partners from './dashboard/Partners';
 import Gallery from './component/Gallery/Gallery';
 import Blogs from './component/Blogs/Blogs'
-
+import ShowDetails from './component/Blogs/ShowDetails';
+import Services from './component/Services/Services';
 
 
 function AppContent() {
@@ -37,7 +38,13 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path='/gallery' element={<Gallery />}/>
-        <Route path='/blogs' element={<Blogs />}/>
+
+
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/blogs/:id' element={<ShowDetails />} />
+        <Route path='/show-details/:id' element={<ShowDetails />} />
+
+        <Route path='/services' element={<Services />}/>
      
 
         {/* Dashboard Layout */}
