@@ -57,18 +57,8 @@ const ShowDetails = () => {
         <div className="flex flex-col md:flex-row gap-8 justify-between">
   
           <p className="text-sm text-gray-300 text-center break-words overflow-hidden whitespace-normal">
-                    {service.short_description}
-                  </p>
-          {/* <div className="md:w-1/2 flex  flex-col">
-            <p className="text-lg mb-4">{service.description}</p>
-
-            <p className="text-sm text-gray-300">
-            Creation Date : {new Date(service.created_at).toLocaleDateString('en-en')}
-            </p>
-            <p className="text-sm text-gray-300">
-            Last Updated : {new Date(service.updated_at).toLocaleDateString('en-en')}
-            </p>
-          </div> */}
+              {service.short_description}
+          </p>
 
           <div className="md:w-1/2 border-l-4 border-r-4 border-white shadow-[4px_0_8px_white,-4px_0_8px_white]" >
             <img

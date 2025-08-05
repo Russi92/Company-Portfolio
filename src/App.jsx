@@ -25,6 +25,7 @@ import Gallery from './component/Gallery/Gallery';
 import Blogs from './component/Blogs/Blogs'
 import ShowDetails from './component/Blogs/ShowDetails';
 import Services from './component/Services/Services';
+import ShowDetailsService from './component/Services/ShowDetailsService';
 
 
 function AppContent() {
@@ -45,7 +46,10 @@ function AppContent() {
         <Route path='/show-details/:id' element={<ShowDetails />} />
 
         <Route path='/services' element={<Services />}/>
+        <Route path="/services/:id" element={<ShowDetailsService />} />
+
      
+
 
         {/* Dashboard Layout */}
         <Route path="/dashboard" element={<DashboardLayout />}>

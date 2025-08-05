@@ -40,7 +40,7 @@ const Login = () => {
       if (err.response && err.response.data && err.response.data.message) {
         setError(`Login failed: ${err.response.data.message}`)
       } else {
-        setError('Login failed. Please check your credentials.')
+        setError('Login failed. Please check your Email or Password.')
       }
       console.error('Login error:', err)
     }
