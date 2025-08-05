@@ -200,7 +200,7 @@ const Users = () => {
       )}
 
       {loading ? (
-        <p>Loading users...</p>
+        <p className='text-white'>Loading users...</p>
       ) : users.length > 0 ? (
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200">
